@@ -33,9 +33,19 @@
         </div>
     </div>
     <div class="address">
-        <div class="address-line">Smetanova 337</div>
-        <div class="address-line">27716 Všetaty</div>
+        <div class="address-line">${person.address.street} ${person.address.houseNumber?number}</div>
+        <div class="address-line">${person.address.postalCode} ${person.address.city}</div>
+        <div class="address-line">${person.address.country}</div>
     </div>
+
+    <div>
+        [#if person.eligibleToDrink]
+            You can drink now.
+            [#else]
+            Unfortunately, you cannot drink yet.
+        [/#if]
+    </div>
+
 </div>
 </body>
 </html>

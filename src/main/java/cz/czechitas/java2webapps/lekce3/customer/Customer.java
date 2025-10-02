@@ -8,6 +8,7 @@ public class Customer {
   private String lastName;
   private LocalDate birthDate;
   private String picturePath;
+  private Address address;
 
   public String getFirstName() {
     return firstName;
@@ -23,6 +24,14 @@ public class Customer {
 
   public void setLastName(String lastName) {
     this.lastName = lastName;
+  }
+
+  public Address getAddress() {
+    return address;
+  }
+
+  public void setAddress(Address address) {
+    this.address = address;
   }
 
   public String getPicturePath() {
@@ -48,5 +57,9 @@ public class Customer {
 
     Period period = birthDate.until(LocalDate.now());
     return period.getYears();
+  }
+
+  public boolean isEligibleToDrink() {
+    return getAge() >= 18;
   }
 }
